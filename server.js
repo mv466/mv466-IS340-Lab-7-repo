@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
+
 app.get('/', (req, res) => {
 res.send('Hello MEAN Stack!');
 });
@@ -18,6 +19,7 @@ const itemSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
+app.use(cors());
 app.use(express.json()); 
 
 app.get('/api/items', async (req, res) => {
